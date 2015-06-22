@@ -50,26 +50,97 @@ ns._drawPoints = function(el, scales, data, prevScales) {
 
   var point = g.selectAll('.d3-point')
     .data(data, function(d) { return d.id; });
+  point[0].forEach(function(e){
+      if (e) {
+          console.log('point: ', e.__data__, e);
+      } else {
+          console.log('point: ' );
+      }
+  });
+  debugger;
 
-  point.enter().append('circle')
+
+  var p2 =  point.enter().append('circle')
       .attr('class', 'd3-point')
       .attr('id', function(d){return d.id})
-      .attr('cx', function(d) {
+
+  p2[0].forEach( function(e){
+      if (e) {
+          console.log('p2..: ', e.__data__, e );
+      } else {
+          console.log('p2..: ' );
+      }
+  });
+  debugger;
+
+
+  var p3 = p2.attr('cx', function(d) {
         if (prevScales) {
+            console.log('previoius');
           return prevScales.x(d.x);
         }
+            console.log('current');
         return scales.x(d.x);
       })
-    .transition()
+  p3[0].forEach( function(e){
+      if (e) {
+          console.log('p3..: ', e.__data__, e );
+      } else {
+          console.log('p3..: ');
+      }
+  });
+  debugger;
+
+
+  var p4 = p3.transition()
       .duration(animationDuration)
       .attr('cx', function(d) { return scales.x(d.x); });
 
-  point
+  p4[0].forEach( function(e){
+      if (e) {
+          console.log('p4..: ', e.__data__, e );
+      } else {
+          console.log('p4..: ' );
+      }
+  });
+  debugger;
+
+
+  point[0].forEach(function(e){
+      if (e) {
+          console.log('point: ', e.__data__, e);
+      } else {
+          console.log('point: ');
+      }
+  });
+  debugger;
+
+  var p5 = point
       .attr('cy', function(d) { return scales.y(d.y); })
       .attr('r', function(d) { return scales.z(d.z); })
-    .transition()
+
+  p5[0].forEach( function(e){
+      if (e) {
+          console.log('p5..: ', e.__data__, e );
+      } else {
+          console.log('p5..: ');
+      }
+  });
+  debugger;
+
+
+  var p6 = p5.transition()
       .duration(animationDuration)
       .attr('cx', function(d) { return scales.x(d.x); });
+
+  p6[0].forEach( function(e){
+      if (e) {
+          console.log('p6..: ', e.__data__, e );
+      } else {
+          console.log('p6..: ' );
+      }
+  });
+  debugger;
 
   point.exit()
     .transition()
