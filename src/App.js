@@ -45,8 +45,9 @@ var App = React.createClass({
     );
   },
 
-  setAppState: function(partialState, callback) {
-    return this.setState(partialState, callback);
+  setAppState: function(partialState) {
+    console.log('setAppState: ', partialState);
+    return this.setState(partialState);
   }
 });
 

@@ -45,7 +45,7 @@ ns._scales = function(el, domain) {
 };
 
 ns._drawPoints = function(el, scales, data, prevScales) {
-  var animationDuration = 400;
+  var animationDuration = 1400;
   var g = d3.select(el).selectAll('.d3-points');
 
   var point = g.selectAll('.d3-point')

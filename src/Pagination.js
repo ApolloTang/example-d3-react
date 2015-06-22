@@ -29,14 +29,13 @@ var Pagination = React.createClass({
     var newDomain = _.map(currentDomain, function(x) {
       return x + step;
     });
+    console.log('newDomain: ', newDomain);
+    console.log('currentDomain: ', currentDomain);
+
     this.props.setAppState({
       data: this.props.getData(newDomain),
-      domain: _.assign({}, this.props.appState.domain, {
-        x: newDomain
-      }),
-      tooltips: [],
-      prevDomain: this.props.appState.domain
-    });
+      domain: _.assign( {}, this.props.appState.domain, { x: newDomain }),
+      prevDomain: this.props.appState.domain });
   }
 });
 
