@@ -15,7 +15,6 @@ var App = React.createClass({
     return {
       data: this.getData(domain),
       domain: {x: domain, y: [0, 100]},
-      tooltips: [],
       prevDomain: null
     };
   },
@@ -50,7 +49,6 @@ var App = React.createClass({
         <Chart
           data={this.state.data}
           domain={this.state.domain}
-          tooltips={this.state.tooltips}
           prevDomain={this.state.prevDomain} />
       </div>
     );
