@@ -19,8 +19,19 @@ var App = React.createClass({
       prevDomain: null
     };
   },
+ _allData : [
+      {id: '1',  x: 5,  y: 10, z: 1},
+      {id: '2',  x: 10, y: 15, z: 2},
+      {id: '3',  x: 15, y: 20, z: 3},
+      {id: '5',  x: 20, y: 25, z: 4},
+      {id: '6',  x: 25, y: 30, z: 5},
+      {id: '7',  x: 30, y: 35, z: 7},
+      {id: '8',  x: 35, y: 40, z: 8},
+      {id: '8',  x: 40, y: 45, z: 9},
+      {id: '10', x: 45, y: 50, z: 10}
+  ],
 
-  _allData: dataGenerator.generate(50),
+  // _allData: dataGenerator.generate(50),
 
   getData: function(domain) {
     return _.filter(this._allData, function(d) {

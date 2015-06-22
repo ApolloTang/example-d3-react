@@ -53,6 +53,7 @@ ns._drawPoints = function(el, scales, data, prevScales) {
 
   point.enter().append('circle')
       .attr('class', 'd3-point')
+      .attr('id', function(d){return d.id})
       .attr('cx', function(d) {
         if (prevScales) {
           return prevScales.x(d.x);
@@ -63,7 +64,8 @@ ns._drawPoints = function(el, scales, data, prevScales) {
       .duration(animationDuration)
       .attr('cx', function(d) { return scales.x(d.x); });
 
-  point.attr('cy', function(d) { return scales.y(d.y); })
+  point
+      .attr('cy', function(d) { return scales.y(d.y); })
       .attr('r', function(d) { return scales.z(d.z); })
     .transition()
       .duration(animationDuration)
