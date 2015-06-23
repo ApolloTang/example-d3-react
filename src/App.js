@@ -23,6 +23,7 @@ var _data = [
 
 function getData(x1, x2) {
   return _.filter(_data, function(d) {
+    // the filter return result that include end point
     return d.x >= x1 && d.x <= x2;
   });
 }

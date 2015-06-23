@@ -21,6 +21,8 @@ ns.update = function(el, state) {
 };
 
 ns._scales = function(el, domain) {
+  // domain looks like this:
+  //    domain: {x: [0, 30], y: [0, 100]}
   var width = el.offsetWidth;
   var height = el.offsetHeight;
 
@@ -37,6 +39,10 @@ ns._scales = function(el, domain) {
     .domain([1, 10]);
 
   return {x: x, y: y, z: z};
+  // return functions that map domain to range
+  // range_x = x(domain_x)
+  // range_y = y(domain_y)
+
 };
 
 ns._drawPoints = function(el, scales, data) {
