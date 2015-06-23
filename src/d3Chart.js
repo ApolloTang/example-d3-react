@@ -16,6 +16,11 @@ ns.create = function(el, state) {
 };
 
 ns.update = function(el, state) {
+  // state look like this:
+      // <Chart
+      //       domain={this.state.domain} = [0,30]
+      //       data={this.state.data}     data point in bounded by state.domain
+      //       prevDomain={this.state.prevDomain} />
   var scales = this._scales(el, state.domain);
   var prevScales = this._scales(el, state.prevDomain);
   this._drawPoints(el, scales, state.data, prevScales);
